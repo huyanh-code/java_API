@@ -1,4 +1,2 @@
-package KLS.indentity.repository;
-
-public interface SubjectRepository {
+package KLS.indentity.repository;public interface SubjectRepository {
 }
