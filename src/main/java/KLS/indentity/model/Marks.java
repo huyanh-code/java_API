@@ -6,15 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.security.auth.Subject;
 import java.util.Date;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
-@Table(name = "T_MARKS")
+@Table(name = "t_marks")
 public class Marks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +25,9 @@ public class Marks {
     @JoinColumn(name = "subject_id")
     private Subject subject;
 
+    @Column(name = "mark")
     private int mark;
-    private Date examDate;
+
 }
+
 

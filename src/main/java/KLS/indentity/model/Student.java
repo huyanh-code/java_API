@@ -1,26 +1,29 @@
 package KLS.indentity.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
-@Table(name = "T_STUDENTS")
+@Table(name = "t_students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name")
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "class_id")
+    @JoinColumn(name = "class_id", referencedColumnName = "id")
     private ClassEntity classEntity;
+
+
+    @OneToMany(mappedBy = "student")
+    private List<Marks> marks;
 
 }
 

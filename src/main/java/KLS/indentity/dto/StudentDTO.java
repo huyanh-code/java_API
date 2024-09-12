@@ -1,2 +1,17 @@
-package KLS.indentity.dto;public class studentDTO {
+package KLS.indentity.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class StudentDTO {
+    private int id;
+    private String name;
+    private String className;
 }
+
